@@ -1,0 +1,15 @@
+Adjustment,From,To,Strength change (MPa),Evidence
+Add 50 kg/m³ cement,263.250,313.250,4.093,Strong
+Remove 10 kg/m³ water,181.725,171.725,2.157,Strong
+Remove 15 kg/m³ water,181.725,166.725,3.284,Strong
+Remove 26 kg/m³ water (typical saving with superplasticizer),181.725,155.725,5.884,Strong
+Add 50 kg/m³ blast furnace slag,42.080,92.080,1.775,Strong
+Add 5 kg/m³ superplasticizer,7.440,12.440,0.872,Strong
+Add 50 kg/m³ fly ash,0.000,50.000,0.773,Weak (not reliable)
+Add 50 kg/m³ coarse aggregate,967.240,1017.240,0.211,Weak (not reliable)
+Add 50 kg/m³ fine aggregate,778.885,828.885,-0.413,Weak (not reliable)
+Cure 7 days instead of 3,3.000,7.000,6.262,Strong
+Cure 28 days instead of 7,7.000,28.000,11.635,Strong
+Cure 56 days instead of 28,28.000,56.000,6.105,Strong
+Cure 90 days instead of 28,28.000,90.000,10.332,Strong
+Replace 50 kg/m³ cement with slag,,,-3.179,Strong

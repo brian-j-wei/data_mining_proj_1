@@ -1,0 +1,9 @@
+Feature,Univariate Coef,Multivariate Coef,Omitted-Variable Term,Largest Contributor,Largest Contribution
+Cement,0.0808,0.1324,-0.0517,Fly Ash,-0.0309
+Blast Furnace Slag,0.0316,0.1247,-0.0931,Cement,-0.0409
+Fly Ash,-0.0534,0.1061,-0.1596,Cement,-0.1049
+Water,-0.207,-0.1341,-0.0729,Age,0.0979
+Superplasticizer,0.8881,0.1172,0.7709,Fly Ash,0.3674
+Coarse Aggregate,-0.0274,0.0285,-0.0559,Blast Furnace Slag,-0.0507
+Fine Aggregate,-0.0306,0.0338,-0.0644,Cement,-0.0386
+Age,0.0952,0.1188,-0.0236,Cement,0.0234

@@ -1,0 +1,3 @@
+Model,Training R2,Testing R2,Training typical error (MPa),Testing typical error (MPa),Testing average over-prediction (MPa),Testing share within 10 MPa
+Simple straight-line model,0.6240,0.3685,10.2051,11.8876,5.6486,0.6538
+Final model (log-transformed),0.7984,0.7570,7.4721,7.3746,3.4154,0.8077

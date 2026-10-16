@@ -1,3 +1,7 @@
 .venv/
 __pycache__/
 *.pyc
+
+# Word lock files and macOS metadata
+~$*.docx
+.DS_Store

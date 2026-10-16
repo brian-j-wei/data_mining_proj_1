@@ -30,29 +30,69 @@ numpy/pandas ABI compatibility.
 
 ## Reproducing the results
 
-Run from the repository root, in this order. Each script is independent.
+`bash run_all.sh` runs every analysis script below in order (well under a
+minute); `bash run_all.sh --reports` also rebuilds the Part 2/3 reports. To
+run scripts individually, run them from the repository root. Each script is
+independent. Figures go to `assets/figures/`, tables to `assets/tables/`.
 
 ```bash
 # Q2/Q3: gradient descent, scaling & convergence speed
-#   -> assets/figures/gradient_descent_convergence.png
+#   -> figures/gradient_descent_convergence.png
 python scripts/gradient_descent_self_contained.py
 
 # Q5: log transformation, all three loss curves
-#   -> assets/figures/log_transformation_convergence.png
+#   -> figures/log_transformation_convergence.png
 python scripts/log_transformation.py
 
 # Q5: summary table across the three optimal models
-#   -> assets/summary_table.csv
+#   -> tables/summary_table.csv
 python scripts/summary_table.py
 
-# Q6: univariate vs. multivariate coefficients
-#   -> assets/univariate_vs_multivariate.csv, assets/feature_correlations.csv
+# Q6: univariate vs. multivariate coefficients, omitted-variable decomposition
+#   -> tables/univariate_vs_multivariate.csv, tables/feature_correlations.csv,
+#      figures/feature_correlations.png
 python scripts/univariate_vs_multivariate.py
 
+# Q6: eight univariate models trained with our gradient descent
+#   -> tables/univariate_gradient_descent.csv, figures/univariate_gradient_descent.png
+python scripts/univariate_gradient_descent.py
+
 # Q7: p-values across the three configurations
-#   -> assets/pvalues.csv
+#   -> tables/pvalues.csv
 python scripts/pvalues.py
+
+# Part 3 support: conditioning, learning-rate sweep, GD vs. closed form
+#   -> tables/convergence_diagnostics.csv, tables/learning_rate_sweep.csv,
+#      figures/convergence_scaling.png, figures/convergence_log_transform.png
+python scripts/convergence_diagnostics.py
+
+# Part 3 support: closed-form coefficients for all three feature sets
+#   -> tables/optimal_coefficients.csv
+python scripts/optimal_coefficients.py
+
+# Part 2 support: training-set statistics, client figures and tables
+#   -> tables/descriptive_stats.csv, tables/model_reliability.csv,
+#      tables/mix_adjustment_effects.csv, tables/water_cement_bands.csv, ...,
+#      figures/client_*.png
+python scripts/descriptive_stats.py
+python scripts/client_insights.py
 ```
+
+## Reports (Parts 2 and 3)
+
+The client report and the technical appendix are written in Markdown under
+`reports/` and built into formatted Word documents (Calibri 11 pt, 1-inch
+margins, 1.15 spacing, numbered tables and figures, native Word equations):
+
+```bash
+conda install pandoc                  # or https://pandoc.org/installing.html
+pip install -r reports/requirements.txt
+python reports/build_reports.py       # -> reports/output/*.docx, prints word counts
+python reports/build_reports.py --pdf # macOS + Microsoft Word: also export PDFs
+```
+
+The reports cite figures and tables from `assets/`, so run the analysis
+scripts first. Edit the `.md` files, not the generated `.docx`.
 
 The two gradient descent scripts are self-contained: they depend only on the
 listed packages and can be run from any directory, or copied out of the repo
@@ -84,11 +124,24 @@ the Hessian's largest eigenvalue. All runs use 5000 iterations.
 
 ## Layout
 
-- `data/` — UCI dataset and its original readme
-- `scripts/` — one script per assignment question (see above)
-- `utils/` — `grad_descent.py`, `metrics.py`, `data.py`, `transforms.py`, `plotting.py`
-- `models/` — `linear.py` (univariate + multivariate wrappers)
-- `assets/` — assignment PDF, generated figures and tables
+```
+data/                     UCI dataset and its original readme
+scripts/                  one script per analysis (see above)
+utils/                    grad_descent.py, metrics.py, data.py, transforms.py,
+                          plotting.py, report_style.py (shared figure style)
+models/                   linear.py (univariate + multivariate wrappers)
+assets/
+  CSE5104 ... .pdf        assignment
+  figures/                generated figures (PNG, 300 dpi for the reports)
+  tables/                 generated tables (CSV)
+reports/
+  part2_client_report.md       Part 2 source
+  part3_technical_appendix.md  Part 3 source
+  build_reports.py             Markdown -> Word (and PDF) build
+  templates/reference.docx     generated Word style template
+  output/                      built .docx / .pdf deliverables
+run_all.sh                reproduce every figure and table
+```
 
 ## Dependencies
 

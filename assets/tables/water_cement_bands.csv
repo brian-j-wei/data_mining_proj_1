@@ -1,0 +1,6 @@
+Water-to-cement ratio,Mixes,Median (MPa),Lowest 10% below (MPa),Share reaching 30 MPa,Share reaching 40 MPa
+0.40 or less,34,60.288,44.104,1.000,1.000
+0.40 to 0.50,32,50.466,37.503,1.000,0.719
+0.50 to 0.60,69,41.051,31.821,0.957,0.580
+0.60 to 0.80,89,33.420,23.555,0.753,0.348
+above 0.80,160,27.455,14.923,0.369,0.069

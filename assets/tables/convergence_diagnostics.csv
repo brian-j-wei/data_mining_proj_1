@@ -1,0 +1,4 @@
+Model,Learning rate,Stability limit 2/L,Condition number,Updates to R2 > 0,Updates to within 1% of optimum,GD train MSE,Optimal train MSE,GD excess MSE (%),GD train R2,GD test MSE,GD test R2,Optimal train R2,Optimal test R2,GD intercept,Optimal intercept
+Untransformed,3e-07,5.98879e-07,1.18419e+10,5,,105.374,104.144,1.18114,0.619609,139.931,0.374661,0.62405,0.368483,-0.000109524,-51.4295
+Standardized,0.2,0.426681,86.8016,3,79,104.144,104.144,0,0.62405,141.314,0.368483,0.62405,0.368483,36.9268,36.9268
+Log-transformed,0.005,0.00567808,1.63445e+07,7,,60.3959,55.8324,8.17359,0.781976,48.6334,0.782662,0.79845,0.756959,-0.787324,81.0016

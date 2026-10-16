@@ -1,0 +1,16 @@
+Model,Learning rate / limit,Learning rate,Final train MSE,Outcome
+Untransformed,0.5,2.9944e-07,105.38,converges
+Untransformed,0.9,5.38991e-07,104.566,converges
+Untransformed,0.99,5.92891e-07,104.545,converges
+Untransformed,1.01,6.04868e-07,1.30993e+89,diverges
+Untransformed,1.1,6.58767e-07,,diverges
+Standardized,0.5,0.21334,104.144,converges
+Standardized,0.9,0.384013,104.144,converges
+Standardized,0.99,0.422414,104.144,converges
+Standardized,1.01,0.430948,2.2406e+85,diverges
+Standardized,1.1,0.469349,,diverges
+Log-transformed,0.5,0.00283904,63.5896,converges
+Log-transformed,0.9,0.00511027,60.2901,converges
+Log-transformed,0.99,0.0056213,59.8319,converges
+Log-transformed,1.01,0.00573486,1.3377e+89,diverges
+Log-transformed,1.1,0.00624589,,diverges

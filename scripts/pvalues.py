@@ -12,7 +12,8 @@ ROOT = HERE.parent
 DATA = ROOT / "data/concrete+compressive+strength/Concrete_Data.xls"
 if not DATA.exists():
     DATA = HERE / "Concrete_Data.xls"
-OUT_DIR = ROOT / "assets" if (ROOT / "assets").is_dir() else HERE
+OUT_DIR = ROOT / "assets/tables" if (ROOT / "assets").is_dir() else HERE
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 FEATURES = [
     "Cement", "Blast Furnace Slag", "Fly Ash", "Water",
